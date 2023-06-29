@@ -1,6 +1,6 @@
 import { Command } from 'clipanion';
 import consola from 'consola';
-import { themes } from '../import.js';
+import { themes } from '../../import.js';
 
 export class ThemesListCommand extends Command {
   static paths = [['list', 'theme']];

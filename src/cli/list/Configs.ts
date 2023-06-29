@@ -8,9 +8,9 @@ import {
   z,
 } from 'zod';
 import consola from 'consola';
-import { configs } from '../configs/index.js';
-import { configAvailable } from '../utils/configAvailable.js';
-import type { Configs } from '../types/config.js';
+import { configs } from '../../configs/index.js';
+import { configAvailable } from '../../utils/configAvailable.js';
+import type { Configs } from '../../types/config.js';
 
 const optionsSchema = z.union([
   z.literal('available'),
