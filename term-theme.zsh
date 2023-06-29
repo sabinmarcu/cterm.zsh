@@ -17,8 +17,6 @@ fi
 
 cd $ZSH_TT_DIR
 
-echo "Setting up @ $(pwd)"
-
 if [[ ! -d node_modules ]]; then
   $packageManager install
 fi
