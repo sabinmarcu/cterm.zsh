@@ -1,8 +1,10 @@
 {
-  "name": "term-theme-generator",
+  "name": "term-theme",
   "version": "0.1.0",
   "packageManager": "yarn@4.0.0-rc.46",
   "type": "module",
+  "main": "src/index.ts",
+  "bin": "./bin/term-theme",
   "scripts": {
     "start": "node --no-warnings=ExperimentalWarning --loader ts-node/esm src/index.ts",
     "dev": "node --no-warnings=ExperimentalWarning --loader ts-node/esm --watch src/index.ts --watch"

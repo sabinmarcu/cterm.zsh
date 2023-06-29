@@ -3639,9 +3639,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"term-theme-generator@workspace:.":
+"term-theme@workspace:.":
   version: 0.0.0-use.local
-  resolution: "term-theme-generator@workspace:."
+  resolution: "term-theme@workspace:."
   dependencies:
     "@babel/core": "npm:^7.22.5"
     "@iarna/toml": "npm:^2.2.5"
@@ -3660,6 +3660,8 @@ __metadata:
     typescript: "npm:^5.1.6"
     yaml: "npm:^2.3.1"
     zod: "npm:^3.21.4"
+  bin:
+    term-theme: ./bin/term-theme
   languageName: unknown
   linkType: soft
 
