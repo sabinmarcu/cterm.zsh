@@ -29,10 +29,6 @@ export type ConfigUpdaters = {
   config: ConfigUpdater,
 };
 
-export type ConfigProcess<T extends Record<string, any> = {}> = {
-  theme: ConfigTheme<T>,
-};
-
 export type Config<T extends Record<string, any> = {}> = {
   properties: ConfigProperties,
   updaters: ConfigUpdaters,
