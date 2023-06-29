@@ -6,7 +6,7 @@ import consola from 'consola';
 import { themes } from '../../import.js';
 
 export class ThemesListCommand extends Command {
-  static paths = [['list', 'theme']];
+  static paths = [['theme', 'list']];
 
   static usage = Command.Usage({
     category: 'List',

@@ -3,11 +3,11 @@ import {
   Option,
 } from 'clipanion';
 import consola from 'consola';
-import { themes } from '../import.js';
-import { configs } from '../configs/index.js';
+import { themes } from '../../import.js';
+import { configs } from '../../configs/index.js';
 
 export class ConfigureCommand extends Command {
-  static paths = [['set']];
+  static paths = [['theme', 'set']];
 
   static usage = Command.Usage({
     category: 'Themes',

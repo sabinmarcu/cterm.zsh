@@ -40,7 +40,7 @@ const render = {
 } satisfies Record<NonNullable<Options>, () => void>;
 
 export class ConfigListCommand extends Command {
-  static paths = [['list', 'config']];
+  static paths = [['config', 'list']];
 
   static usage = Command.Usage({
     category: 'List',

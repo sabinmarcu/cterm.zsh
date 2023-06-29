@@ -1,13 +1,13 @@
 import fs from 'node:fs/promises';
 import { Command } from 'clipanion';
 import consola from 'consola';
-import { themes } from '../import.js';
-import { configs } from '../configs/index.js';
-import { getOutputPath } from '../utils/getOutputPath.js';
-import type { Configs } from '../types/config.js';
+import { themes } from '../../import.js';
+import { configs } from '../../configs/index.js';
+import { getOutputPath } from '../../utils/getOutputPath.js';
+import type { Configs } from '../../types/config.js';
 
 export class GenerateCommand extends Command {
-  static paths = [['generate']];
+  static paths = [['theme', 'generate']];
 
   static usage = Command.Usage({
     category: 'Themes',

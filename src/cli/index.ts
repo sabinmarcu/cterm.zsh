@@ -3,11 +3,11 @@ import {
   Cli,
 } from 'clipanion';
 import manifest from '../../package.json' assert { type: 'json'};
-import { ThemesListCommand } from './list/Themes.js';
-import { ConfigListCommand } from './list/Configs.js';
-import { GenerateCommand } from './Generate.js';
-import { UpdateCommand } from './Update.js';
-import { ConfigureCommand } from './Configure.js';
+import { ThemesListCommand } from './theme/Themes.js';
+import { ConfigListCommand } from './config/Configs.js';
+import { GenerateCommand } from './theme/Generate.js';
+import { UpdateCommand } from './theme/Update.js';
+import { ConfigureCommand } from './theme/Configure.js';
 
 const args = process.argv.slice(2);
 const commands = [
