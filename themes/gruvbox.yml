@@ -1,0 +1,29 @@
+colors:
+  normal: 
+    black: '#282828'    # Black (Host)
+    red: '#CC241D'    # Red (Syntax string)
+    green: '#98971A'    # Green (Command)
+    yellow: '#D79921'    # Yellow (Command second)
+    blue: '#458588'    # Blue (Path)
+    magenta: '#B16286'    # Magenta (Syntax var)
+    cyan: '#689D6A'    # Cyan (Prompt)
+    white: '#A89984'    # White
+
+  bright:
+    black: '#928374'    # Bright Black
+    red: '#FB4934'    # Bright Red (Command error)
+    green: '#B8BB26'    # Bright Green (Exec)
+    yellow: '#FABD2F'    # Bright Yellow
+    blue: '#83A598'    # Bright Blue (Folder)
+    magenta: '#D3869B'    # Bright Magenta
+    cyan: '#8EC07C'    # Bright Cyan
+    white: '#EBDBB2'    # Bright White
+
+  background: '#282828'  # Background
+  foreground: '#EBDBB2'  # Foreground (Text)
+
+  cursor: '#EBDBB2'      # Cursor
+
+overrides: 
+  tmux: 
+    color: '#EBDBB2'

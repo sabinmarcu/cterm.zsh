@@ -1,0 +1,35 @@
+{
+  "name": "term-theme-generator",
+  "version": "0.1.0",
+  "packageManager": "yarn@4.0.0-rc.46",
+  "type": "module",
+  "scripts": {
+    "start": "node --no-warnings=ExperimentalWarning --loader ts-node/esm src/index.ts",
+    "dev": "node --no-warnings=ExperimentalWarning --loader ts-node/esm --watch src/index.ts --watch"
+  },
+  "volta": {
+    "node": "20.3.1",
+    "yarn": "4.0.0-rc.46"
+  },
+  "dependencies": {
+    "@iarna/toml": "^2.2.5",
+    "@total-typescript/ts-reset": "^0.4.2",
+    "clipanion": "^3.2.1",
+    "consola": "^3.2.2",
+    "execa": "^7.1.1",
+    "mkdirp": "^3.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6",
+    "yaml": "^2.3.1",
+    "zod": "^3.21.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@sabinmarcu/eslint-config": "^1.0.0",
+    "@types/babel__core": "^7",
+    "@types/eslint": "^8",
+    "@types/iarna__toml": "^2",
+    "@types/node": "^20.3.2",
+    "eslint": "^8.43.0"
+  }
+}
