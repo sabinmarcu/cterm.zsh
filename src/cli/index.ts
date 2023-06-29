@@ -9,21 +9,21 @@ import { GenerateCommand } from './Generate.js';
 import { UpdateCommand } from './Update.js';
 import { ConfigureCommand } from './Configure.js';
 
-const [, app, ...args] = process.argv;
+const args = process.argv.slice(2);
 const commands = [
   ThemesListCommand,
   ConfigListCommand,
   GenerateCommand,
   UpdateCommand,
-  ConfigureCommand,
   Builtins.HelpCommand,
   Builtins.DefinitionsCommand,
   Builtins.VersionCommand,
+  ConfigureCommand,
 ];
 
 const cli = new Cli({
   binaryLabel: manifest.name,
-  binaryName: `${app.slice(app.lastIndexOf('/') + 1, app.indexOf('.'))}`,
+  binaryName: manifest.name,
   binaryVersion: manifest.version,
 });
 

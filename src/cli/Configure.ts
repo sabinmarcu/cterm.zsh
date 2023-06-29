@@ -7,7 +7,16 @@ import { themes } from '../import.js';
 import { configs } from '../configs/index.js';
 
 export class ConfigureCommand extends Command {
-  static paths = [Command.Default, ['set']];
+  static paths = [['set']];
+
+  static usage = Command.Usage({
+    category: 'Themes',
+    description: 'Configure for one theme',
+    examples: [
+      ['Use tokyonight', '$0 set tokyonight'],
+      ['Use nord', '$0 set nord'],
+    ],
+  });
 
   theme = Option.String();
 

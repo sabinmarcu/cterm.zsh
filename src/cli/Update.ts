@@ -9,6 +9,15 @@ import { configs } from '../configs/index.js';
 export class UpdateCommand extends Command {
   static paths = [['update']];
 
+  static usage = Command.Usage({
+    category: 'Themes',
+    description: 'Live update of config for theme',
+    examples: [
+      ['Use tokyonight', '$0 set tokyonight'],
+      ['Use nord', '$0 set nord'],
+    ],
+  });
+
   theme = Option.String();
 
   async execute() { // eslint-disable-line class-methods-use-this

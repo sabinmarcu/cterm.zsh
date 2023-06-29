@@ -9,6 +9,11 @@ import type { Configs } from '../types/config.js';
 export class GenerateCommand extends Command {
   static paths = [['generate']];
 
+  static usage = Command.Usage({
+    category: 'Themes',
+    description: 'Generate Themes',
+  });
+
   async execute() { // eslint-disable-line class-methods-use-this
     for (const [
       config,

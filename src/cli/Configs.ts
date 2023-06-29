@@ -40,7 +40,16 @@ const render = {
 } satisfies Record<NonNullable<Options>, () => void>;
 
 export class ConfigListCommand extends Command {
-  static paths = [['config', 'list']];
+  static paths = [['list', 'config']];
+
+  static usage = Command.Usage({
+    category: 'List',
+    description: 'List available or supported configs',
+    examples: [
+      ['List available', '$0 list config available'],
+      ['List supported', '$0 list config supported'],
+    ],
+  });
 
   mode = Option.String({ required: false });
 
