@@ -10,7 +10,7 @@ colors:
     white: '#FFFEFE'    # White
 
   bright:
-    black: '#000000'    # Bright Black
+    black: '#3D3F41'    # Bright Black
     red: '#CC6666'    # Bright Red (Command error)
     green: '#B5BD68'    # Bright Green (Exec)
     yellow: '#F0C574'    # Bright Yellow
