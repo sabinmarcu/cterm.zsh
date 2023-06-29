@@ -1,4 +1,4 @@
 #!/usr/bin/env zsh
 
 local SCRIPT_PATH=${0:a:h}
-node --no-warnings=ExperimentalWarning --loader ts-node/esm $SCRIPT_PATH/../src/index.ts $@
+cd $SCRIPT_PATH/../ && node --no-warnings=ExperimentalWarning --loader ts-node/esm $SCRIPT_PATH/../src/index.ts $@
