@@ -6,9 +6,11 @@ import manifest from '../../package.json' assert { type: 'json'};
 import { ConfigListCommand } from './config/Configs.js';
 import { themeCommands } from './theme/index.js';
 import { keymapCommands } from './mapping/index.js';
+import { DefaultCommand } from './Default.js';
 
 const args = process.argv.slice(2);
 const commands = [
+  DefaultCommand,
   ConfigListCommand,
   ...themeCommands,
   ...keymapCommands,
