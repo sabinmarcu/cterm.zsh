@@ -3,7 +3,7 @@ import consola from 'consola';
 import { configs } from '../../configs/index.js';
 
 export class KeymapUpdateCommand extends Command {
-  static paths = [['keymap', 'set']];
+  static paths = [['keymap']];
 
   static usage = Command.Usage({
     category: 'Keymap',

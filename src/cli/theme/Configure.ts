@@ -7,14 +7,14 @@ import { themes } from '../../import.js';
 import { configs } from '../../configs/index.js';
 
 export class ConfigureCommand extends Command {
-  static paths = [['theme', 'set']];
+  static paths = [['theme']];
 
   static usage = Command.Usage({
     category: 'Themes',
     description: 'Configure for one theme',
     examples: [
-      ['Use tokyonight', '$0 set tokyonight'],
-      ['Use nord', '$0 set nord'],
+      ['Use tokyonight', '$0 theme tokyonight'],
+      ['Use nord', '$0 theme nord'],
     ],
   });
 
