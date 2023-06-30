@@ -34,8 +34,6 @@ export class GenerateCommand extends Command {
           );
           await fs.writeFile(outputPath, content, 'utf8');
         }
-      } else {
-        consola.warn(`${config} doesn't compile colorschemes`);
       }
     }
   }

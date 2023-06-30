@@ -1,6 +1,6 @@
 import { z } from 'zod';
-import { weztermThemeOverrides } from '../configs/alacritty/types.js';
-import { alacrittyThemeOverrides } from '../configs/wezterm/types.js';
+import { alacrittyThemeOverrides } from '../configs/alacritty/types.js';
+import { weztermThemeOverrides } from '../configs/wezterm/types.js';
 import { nvimThemeOverrides } from '../configs/nvim/types.js';
 import { tmuxThemeOverrides } from '../configs/tmux/types.js';
 

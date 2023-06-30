@@ -1,5 +1,7 @@
 import { z } from 'zod';
 import {
+  defaultMappingDirectory,
+  defaultMappingInput,
   defaultThemeDirectory,
   defaultThemeInputDirectory,
 } from './constants.js';
@@ -15,6 +17,12 @@ const toolEnvironment = z.object({
   ),
   TERM_THEMES_INPUT_DIR: z.string().default(
     defaultThemeInputDirectory,
+  ),
+  TERM_KEYMAPS_DIR: z.string().default(
+    defaultMappingDirectory,
+  ),
+  TERM_KEYMAPS_INPUT: z.string().default(
+    defaultMappingInput,
   ),
 });
 

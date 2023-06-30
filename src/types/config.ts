@@ -1,5 +1,10 @@
 import { z } from 'zod';
 import type { Theme } from './theme.js';
+import type {
+  KeyMap,
+  Mapping,
+  Modifiers,
+} from './mapping.js';
 
 export type ConfigTransformer<T extends Record<string, any>> = (
   input: Theme,
@@ -18,6 +23,33 @@ export type ConfigTheme<T extends Record<string, any>> = {
   fileResolver: ConfigFileResolver,
 };
 
+export type ConfigKeyMap = Record<KeyMap, string>;
+export type ConfigKeyMapper = (input: string) => string;
+export type ConfigModifierMap = Record<Modifiers, string>;
+export type ConfigMappingMap = {
+  key: ConfigKeyMap,
+  modifier: ConfigModifierMap
+  mapper?: ConfigKeyMapper,
+};
+
+export type ConfigMapperTransformer<T extends Record<string, any>> = (
+  input: Mapping
+) => T;
+
+export type ConfigMapperRenderer<T extends Record<string, any>> = (
+  input: T[]
+) => string;
+
+export type ConfigMapperUpdater = () => Promise<void>;
+
+export type ConfigMapping<T extends Record<string, any>> = {
+  maps: ConfigMappingMap,
+  mapper: ConfigMapperTransformer<T>,
+  renderer: ConfigMapperRenderer<T>,
+  updater: ConfigMapperUpdater,
+  extension: string,
+};
+
 export type ConfigProperties = {
   terminal: boolean,
   enabled: boolean,
@@ -25,14 +57,17 @@ export type ConfigProperties = {
 };
 
 export type ConfigUpdaters = {
-  auto?: ConfigUpdater,
   config: ConfigUpdater,
 };
 
-export type Config<T extends Record<string, any> = {}> = {
+export type Config<
+  InputTheme extends Record<string, any> = {},
+  InputMapping extends Record<string, any> = {},
+> = {
   properties: ConfigProperties,
   updaters: ConfigUpdaters,
-  theme?: ConfigTheme<T>
+  theme?: ConfigTheme<InputTheme>
+  mapping?: ConfigMapping<InputMapping>,
 };
 
 export const configSchema = z.union([

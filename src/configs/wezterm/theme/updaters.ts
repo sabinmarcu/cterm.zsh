@@ -2,31 +2,10 @@ import fs from 'node:fs/promises';
 import type {
   ConfigUpdater,
   ConfigUpdaters,
-} from '../../types/config.js';
+} from '../../../types/config.js';
 import {
   getConfigOutputPath,
-  getOutputPath,
-} from '../../utils/getOutputPath.js';
-import { fileResolver } from './theme.js';
-
-const getThemeChangeString = (themePath: string) => {
-  const buffer = Buffer.from(themePath);
-  const data = buffer.toString('base64');
-  return `\x1b]1337;SetUserVar=custom-theme=${data}\x07`; // eslint-disable-line unicorn/escape-case,unicorn/no-hex-escape
-};
-
-const wrapTmuxThemeChangeString = (themeChangeString: string) => (
-  `\x1bPtmux;\x1b${themeChangeString}\x1b\\` // eslint-disable-line unicorn/escape-case,unicorn/no-hex-escape
-);
-
-export const auto: ConfigUpdater = async (theme) => {
-  const themePath = await getOutputPath('wezterm', fileResolver, theme);
-  let themeChangeString = getThemeChangeString(themePath);
-  if (process.env.TMUX) {
-    themeChangeString = wrapTmuxThemeChangeString(themeChangeString);
-  }
-  process.stdout.write(themeChangeString);
-};
+} from '../../../utils/getOutputPath.js';
 
 const configTemplate = (path: string, theme: string) => `
 local wezterm = require("wezterm")
@@ -64,6 +43,5 @@ export const config: ConfigUpdater = async (theme) => {
 };
 
 export const updaters: ConfigUpdaters = {
-  auto,
   config,
 };

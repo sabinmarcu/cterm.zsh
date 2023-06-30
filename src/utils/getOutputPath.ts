@@ -22,3 +22,14 @@ export const getOutputPath = async (
     fileName,
   );
 };
+
+export const getConfigMappingPath = async (
+  config: Configs,
+  extension: string,
+) => {
+  await mkdirp(process.env.TERM_KEYMAPS_DIR);
+  return path.resolve(
+    process.env.TERM_KEYMAPS_DIR,
+    `${config}.${extension}`,
+  );
+};

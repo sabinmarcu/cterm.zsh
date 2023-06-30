@@ -28,7 +28,8 @@ export class ConfigureCommand extends Command {
 
     await this.cli.run(['theme', 'generate'], { env: { CONSOLA_LEVEL: '0' } });
 
-    for (const { updaters: { config } } of Object.values(configs)) {
+    for (const [name, { updaters: { config } }] of Object.entries(configs)) {
+      consola.info(`Configuring ${name} with theme ${this.theme}`);
       await config(this.theme);
     }
 

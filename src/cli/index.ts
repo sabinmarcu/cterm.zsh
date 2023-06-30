@@ -3,22 +3,17 @@ import {
   Cli,
 } from 'clipanion';
 import manifest from '../../package.json' assert { type: 'json'};
-import { ThemesListCommand } from './theme/Themes.js';
 import { ConfigListCommand } from './config/Configs.js';
-import { GenerateCommand } from './theme/Generate.js';
-import { UpdateCommand } from './theme/Update.js';
-import { ConfigureCommand } from './theme/Configure.js';
+import { themeCommands } from './theme/index.js';
+import { keymapCommands } from './mapping/index.js';
 
 const args = process.argv.slice(2);
 const commands = [
-  ThemesListCommand,
   ConfigListCommand,
-  GenerateCommand,
-  UpdateCommand,
+  ...themeCommands,
+  ...keymapCommands,
   Builtins.HelpCommand,
-  Builtins.DefinitionsCommand,
   Builtins.VersionCommand,
-  ConfigureCommand,
 ];
 
 const cli = new Cli({

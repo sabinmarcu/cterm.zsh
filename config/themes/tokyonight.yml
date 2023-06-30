@@ -23,3 +23,7 @@ colors:
   foreground: '#C0CAF5'  # Foreground (Text)
 
   cursor: '#C0CAF5'      # Cursor
+
+overrides:
+  tmux: 
+    color: '#7AA2F7'

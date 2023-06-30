@@ -35,3 +35,7 @@ export const mappingSchema = z.object({
 });
 
 export type Mapping = z.infer<typeof mappingSchema>;
+
+export const mappingsSchema = z.array(mappingSchema);
+
+export type Mappings = z.infer<typeof mappingsSchema>;

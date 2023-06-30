@@ -1194,6 +1194,32 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cterm@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "cterm@workspace:."
+  dependencies:
+    "@babel/core": "npm:^7.22.5"
+    "@iarna/toml": "npm:^2.2.5"
+    "@sabinmarcu/eslint-config": "npm:^1.0.0"
+    "@total-typescript/ts-reset": "npm:^0.4.2"
+    "@types/babel__core": "npm:^7"
+    "@types/eslint": "npm:^8"
+    "@types/iarna__toml": "npm:^2"
+    "@types/node": "npm:^20.3.2"
+    clipanion: "npm:^3.2.1"
+    consola: "npm:^3.2.2"
+    eslint: "npm:^8.43.0"
+    execa: "npm:^7.1.1"
+    mkdirp: "npm:^3.0.1"
+    ts-node: "npm:^10.9.1"
+    typescript: "npm:^5.1.6"
+    yaml: "npm:^2.3.1"
+    zod: "npm:^3.21.4"
+  bin:
+    cterm: ./bin/cterm
+  languageName: unknown
+  linkType: soft
+
 "damerau-levenshtein@npm:^1.0.8":
   version: 1.0.8
   resolution: "damerau-levenshtein@npm:1.0.8"
@@ -3638,32 +3664,6 @@ __metadata:
   checksum: 1769336dd21481ae6347611ca5fca47add0962fd8e80466515032125eca0084a4f0ede11e65341b9c0018ef4e1cf1ad820adbb0fba7cc99865c6005734000b0a
   languageName: node
   linkType: hard
-
-"term-theme@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "term-theme@workspace:."
-  dependencies:
-    "@babel/core": "npm:^7.22.5"
-    "@iarna/toml": "npm:^2.2.5"
-    "@sabinmarcu/eslint-config": "npm:^1.0.0"
-    "@total-typescript/ts-reset": "npm:^0.4.2"
-    "@types/babel__core": "npm:^7"
-    "@types/eslint": "npm:^8"
-    "@types/iarna__toml": "npm:^2"
-    "@types/node": "npm:^20.3.2"
-    clipanion: "npm:^3.2.1"
-    consola: "npm:^3.2.2"
-    eslint: "npm:^8.43.0"
-    execa: "npm:^7.1.1"
-    mkdirp: "npm:^3.0.1"
-    ts-node: "npm:^10.9.1"
-    typescript: "npm:^5.1.6"
-    yaml: "npm:^2.3.1"
-    zod: "npm:^3.21.4"
-  bin:
-    term-theme: ./bin/term-theme
-  languageName: unknown
-  linkType: soft
 
 "text-table@npm:^0.2.0":
   version: 0.2.0

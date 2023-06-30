@@ -4,9 +4,9 @@ import type {
   ConfigRenderer,
   ConfigTheme,
   ConfigTransformer,
-} from '../../types/config.js';
-import type { AlacrittyTheme } from './types.js';
-import { updateColors } from './utils.js';
+} from '../../../types/config.js';
+import type { AlacrittyTheme } from '../types.js';
+import { updateColors } from '../utils.js';
 
 const transformer: ConfigTransformer<AlacrittyTheme> = ({
   colors: {
@@ -14,7 +14,7 @@ const transformer: ConfigTransformer<AlacrittyTheme> = ({
     bright,
     background,
     foreground,
-  }
+  },
 }) => ({
   colors: {
     primary: updateColors({

@@ -15,4 +15,10 @@ export type WeztermTheme = {
   }
 };
 
-export const alacrittyThemeOverrides = z.object({})
+export type WeztermMapping = {
+  key: string,
+  mods: string,
+  action: string,
+};
+
+export const weztermThemeOverrides = z.object({});

@@ -4,11 +4,11 @@ import type {
   ConfigRenderer,
   ConfigTheme,
   ConfigFileResolver,
-} from '../../types/config.js';
+} from '../../../types/config.js';
 import type {
   WeztermTheme,
-} from './types.js';
-import { resolveColors } from './utils.js';
+} from '../types.js';
+import { resolveColors } from '../utils.js';
 
 export const renderer: ConfigRenderer<WeztermTheme> = (theme) => (
   TOML.stringify(theme)
@@ -20,7 +20,7 @@ export const transformer: ConfigTransformer<WeztermTheme> = ({
     background,
     foreground,
     cursor,
-  }
+  },
 }) => ({
   colors: {
     ansi: resolveColors(normal),

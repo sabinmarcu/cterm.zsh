@@ -2,8 +2,8 @@ import fs from 'node:fs/promises';
 import type {
   ConfigUpdater,
   ConfigUpdaters,
-} from '../../types/config.js';
-import { getConfigOutputPath } from '../../utils/getOutputPath.js';
+} from '../../../types/config.js';
+import { getConfigOutputPath } from '../../../utils/getOutputPath.js';
 
 const configTemplate = (path: string, theme: string) => `
 import: 

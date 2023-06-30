@@ -12,7 +12,7 @@ export const allConfigs = {
   alacritty: AlacrittyConfig,
   nvim: NVimConfig,
   tmux: TmuxConfig,
-} as const satisfies Record<Configs, Config<any>>;
+} as const satisfies Record<Configs, Config<any, any>>;
 
 export const configs = Object.fromEntries(
   Object.entries(allConfigs)
