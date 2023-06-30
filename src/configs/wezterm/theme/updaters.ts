@@ -9,8 +9,10 @@ const configTemplate = (theme: string) => `
 ${pathFragment()}
 
 return function(config, override)
-  local colors = require('themes.wezterm.' .. '${theme}')
-  config.colors = colors
+  local status, colors = pcall(require, 'themes.wezterm.' .. '${theme}')
+  if status then
+    config.colors = colors
+  end
 end
 `.trim();
 
