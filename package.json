@@ -14,7 +14,6 @@
     "yarn": "4.0.0-rc.46"
   },
   "dependencies": {
-    "@iarna/toml": "^2.2.5",
     "@total-typescript/ts-reset": "^0.4.2",
     "clipanion": "^3.2.1",
     "consola": "^3.2.2",

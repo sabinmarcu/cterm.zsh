@@ -1,15 +1,9 @@
 import fs from 'node:fs/promises';
 import type { ConfigMapperUpdater } from '../../../types/config.js';
-import { getConfigMappingPath } from '../../../utils/getOutputPath.js';
-import { extension } from './properties.js';
+import { pathFragment } from '../pathFragment.js';
 
-export const compileTemplate = (path: string) => `
-local wezterm = require("wezterm")
-local mappingsPath = "${path}"
-
-if not string.find(package.path, mappingsPath) then
-  package.path = package.path .. ";" .. mappingsPath .. "/?.lua"
-end
+export const compileTemplate = () => `
+${pathFragment()}
 
 return function(config)
   wezterm.log_info("Attempting to require mappings")
@@ -21,11 +15,9 @@ end
 `;
 
 export const updater: ConfigMapperUpdater = async () => {
-  const fileName = await getConfigMappingPath('wezterm', extension);
-  const modulePath = fileName.split('/').slice(0, -2).join('/');
   fs.writeFile(
     process.env.WEZTERM_TERM_KEYMAP,
-    compileTemplate(modulePath),
+    compileTemplate(),
     'utf8',
   );
 };
