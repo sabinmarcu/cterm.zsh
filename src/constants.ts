@@ -1,14 +1,9 @@
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 
-export const defaultOutDirectory = fileURLToPath(
-  new URL('../out', import.meta.url),
-);
+export const XDG_CONFIG_HOME = process.env.XDG_CONFIG_HOME || '~/.config';
+export const defaultOutDirectory = path.resolve(process.env.HOME, '.cterm_config');
 
-export const defaultInDirectory = fileURLToPath(
-  new URL('../config', import.meta.url),
-);
-
+export const defaultInDirectory = path.resolve(XDG_CONFIG_HOME, 'cterm');
 export const defaultThemeDirectory = path.resolve(defaultOutDirectory, 'themes');
 
 export const defaultThemeInputDirectory = path.resolve(defaultInDirectory, 'themes');

@@ -11,7 +11,8 @@ import { nvimEnvironment } from './configs/nvim/environment.js';
 import { tmuxEnvironment } from './configs/tmux/environment.js';
 
 const toolEnvironment = z.object({
-  XDG_CONFIG_HOME: z.string(),
+  XDG_CONFIG_HOME: z.string().optional(),
+  HOME: z.string(),
   TERM_THEME: z.string().optional(),
   TERM_THEMES_DIR: z.string().default(
     defaultThemeDirectory,
