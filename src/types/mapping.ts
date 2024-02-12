@@ -32,6 +32,7 @@ export const mappingSchema = z.object({
   key: z.string(),
   mods: z.array(modifiersSchema),
   action: z.string(),
+  description: z.string().optional(),
 });
 
 export type Mapping = z.infer<typeof mappingSchema>;
