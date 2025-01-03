@@ -1,6 +1,5 @@
 import {
   Command,
-  Option,
 } from 'clipanion';
 import consola from 'consola';
 import { themes } from '../import.js';
@@ -12,7 +11,7 @@ export class DefaultCommand extends Command {
     description: 'Configure keymaps and TERM_THEME ',
   });
 
-  async execute() { // eslint-disable-line class-methods-use-this
+  async execute() {
     if (!process.env.TERM_THEME) {
       consola.error('Theme not set in env: TERM_THEME');
       return 1;

@@ -9,6 +9,7 @@ import { alacrittyEnvironment } from './configs/alacritty/environment.js';
 import { weztermEnvironment } from './configs/wezterm/environment.js';
 import { nvimEnvironment } from './configs/nvim/environment.js';
 import { tmuxEnvironment } from './configs/tmux/environment.js';
+import { ghosttyEnvironment } from './configs/ghostty/environment.js';
 
 const toolEnvironment = z.object({
   XDG_CONFIG_HOME: z.string().optional(),
@@ -33,6 +34,7 @@ const environmentVariables = toolEnvironment.extend({
   ...weztermEnvironment.shape,
   ...nvimEnvironment.shape,
   ...tmuxEnvironment.shape,
+  ...ghosttyEnvironment.shape,
 });
 
 const variables = environmentVariables.parse(process.env);

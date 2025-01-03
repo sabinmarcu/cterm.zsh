@@ -30,6 +30,8 @@ export const getConfigMappingPath = async (
   await mkdirp(process.env.TERM_KEYMAPS_DIR);
   return path.resolve(
     process.env.TERM_KEYMAPS_DIR,
-    `${config}.${extension}`,
+    extension ?
+      `${config}.${extension}`
+      : config,
   );
 };

@@ -72,6 +72,7 @@ export type Config<
 
 export const configSchema = z.union([
   z.literal('wezterm'),
+  z.literal('ghostty'),
   z.literal('alacritty'),
   z.literal('nvim'),
   z.literal('tmux'),

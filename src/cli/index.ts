@@ -2,11 +2,22 @@ import {
   Builtins,
   Cli,
 } from 'clipanion';
-import manifest from '../../package.json' assert { type: 'json'};
+import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
+
 import { ConfigListCommand } from './config/Configs.js';
 import { themeCommands } from './theme/index.js';
 import { keymapCommands } from './mapping/index.js';
 import { DefaultCommand } from './Default.js';
+
+const manifestPath = fileURLToPath(new URL('../../package.json', import.meta.url));
+
+const manifest = JSON.parse(
+  fs.readFileSync(
+    manifestPath,
+    'utf8',
+  ),
+) as Record<string, any>;
 
 const args = process.argv.slice(2);
 const commands = [

@@ -10,7 +10,7 @@ export class KeymapUpdateCommand extends Command {
     description: 'Update Keymaps',
   });
 
-  async execute() { // eslint-disable-line class-methods-use-this
+  async execute() {
     await this.cli.run(['keymap', 'generate']);
     for (const [
       name,
